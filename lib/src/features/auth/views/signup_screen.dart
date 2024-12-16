@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wellnes/src/res/colors.dart';
+import 'package:wellnes/src/utils/app_icon.dart';
 import 'package:wellnes/src/utils/button.dart';
 
 class CreateAccountPage extends StatefulWidget {
@@ -14,7 +16,11 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[50],
+       appBar: AppBar(
+        leading: const AppIcon(),
+        centerTitle: true,
+      ),
+      backgroundColor: AppColors.backgroundLight,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: SingleChildScrollView(

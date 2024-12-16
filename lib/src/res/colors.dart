@@ -9,7 +9,7 @@ class AppColors {
 
   // Background Colors
   static const Color background = Color(0xFF2196F3); // Colors.blue[500]
-  static const Color backgroundLight = Color(0xFFBBDEFB); // Colors.blue[100]
+  static const Color backgroundLight = Color.fromRGBO(226, 235, 246, 1);
   static const Color backgroundDark = Color(0xFF1976D2); // Colors.blue[700]
 
   // Text Colors

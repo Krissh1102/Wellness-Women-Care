@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wellnes/src/res/colors.dart';
 import 'package:wellnes/src/utils/app_icon.dart';
 import 'package:wellnes/src/utils/button.dart';
 
@@ -16,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[50], // Light blue background
+      backgroundColor: AppColors.backgroundLight, // Light blue background
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),

@@ -5,6 +5,8 @@ import 'package:wellnes/src/features/auth/views/otp_screen.dart';
 import 'package:wellnes/src/features/auth/views/signup_screen.dart';
 import 'package:wellnes/src/features/auth/welcomeScreen.dart';
 import 'package:wellnes/src/features/screens/homePage.dart';
+import 'package:wellnes/src/features/screens/nearbyClinic/nearbyClinicScreen.dart';
+import 'package:wellnes/src/features/screens/pharmacy/pharmacyScreen.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -33,6 +35,18 @@ class AppRouter {
       GoRoute(
         path: '/home',
         builder: (context, state) => HomePage(),
+      ),
+      GoRoute(
+        path: '/profile',
+        builder: (context, state) => HomePage(),
+      ),
+      GoRoute(
+        path: '/clinic',
+        builder: (context, state) => NearbyClinicScreen(),
+      ),
+      GoRoute(
+        path: '/pharmacy',
+        builder: (context, state) => PharmacyScreen(),
       ),
     ],
   );
