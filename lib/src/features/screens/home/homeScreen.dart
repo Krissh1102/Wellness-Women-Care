@@ -158,26 +158,70 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   SizedBox(height: 16),
-                  Text(
-                    "Health articles",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  Row(
+                    children: [
+                      Text(
+                        "Health articles",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      Spacer(),
+                      TextButton(
+                          onPressed: () {
+                            context.go('/article');
+                          },
+                          child: Text('See More'))
+                    ],
                   ),
                   SizedBox(height: 12),
                   ListTile(
-                    leading: Image.asset('assets/article1.jpg',
-                        width: 50, height: 40), // Replace with actual asset
-                    title: Text("The 25 Healthiest Fruits You Can Eat"),
-                    subtitle: Text("Jul 10, 2023"),
+                    contentPadding: EdgeInsets.all(8),
+                    leading: Image.asset(
+                      'assets/images/Rectangle 460.png',
+                      width: 62,
+                      height: 53,
+                    ),
+                    title: Text(
+                      "The 25 Healthiest Fruits You Can Eat",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                    subtitle: Text(
+                      "Jul 10, 2023",
+                      style: TextStyle(fontSize: 10),
+                    ),
+                    trailing: IconButton(
+                      icon: Icon(Icons.bookmark_border, color: Colors.black),
+                      onPressed: () {},
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.black, width: 1),
+                    ),
                   ),
                   ListTile(
+                    contentPadding: EdgeInsets.all(8),
                     leading: Image.asset(
-                      'assets/article2.jpg',
-                      width: 40,
-                      height: 40,
+                      'assets/images/Rectangle 460.png',
+                      width: 62,
+                      height: 53,
                       fit: BoxFit.cover,
                     ), // Replace with actual asset
-                    title: Text("The Impact of COVID-19 on Healthcare"),
-                    subtitle: Text("Jul 8, 2023"),
+                    title: Text(
+                      "The Impact of COVID-19 on Healthcare",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                    subtitle: Text(
+                      "Jul 8, 2023",
+                      style: TextStyle(fontSize: 10),
+                    ),
+                    trailing: IconButton(
+                      icon: Icon(Icons.bookmark_border, color: Colors.black),
+                      onPressed: () {},
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.black, width: 1),
+                    ),
                   ),
                 ],
               ),

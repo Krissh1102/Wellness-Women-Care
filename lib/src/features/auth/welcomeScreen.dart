@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wellnes/src/res/colors.dart';
 import 'package:wellnes/src/utils/button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -8,7 +9,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[50], // Light blue background
+      backgroundColor: AppColors.backgroundLight,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(

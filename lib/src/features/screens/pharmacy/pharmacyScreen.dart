@@ -1,24 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class PharmacyScreen extends StatelessWidget {
+class PharmacyScreen extends StatefulWidget {
+  @override
+  State<PharmacyScreen> createState() => _PharmacyScreenState();
+}
+
+class _PharmacyScreenState extends State<PharmacyScreen> {
   final List<Map<String, dynamic>> popularProducts = [
     {
       'name': 'Panadol',
       'details': '20pcs',
       'price': '\$15.99',
-      'image': 'assets/panadol.png',
+      'image': 'assets/images/Image (1).png',
     },
     {
       'name': 'Bodrex Herbal',
       'details': '100ml',
       'price': '\$7.99',
-      'image': 'assets/bodrex_herbal.png',
+      'image': 'assets/images/Image (1).png',
     },
     {
       'name': 'Konidin',
       'details': '3pcs',
       'price': '\$5.99',
-      'image': 'assets/konidin.png',
+      'image': 'assets/images/Image (1).png',
     },
   ];
 
@@ -28,21 +34,21 @@ class PharmacyScreen extends StatelessWidget {
       'details': '75ml',
       'price': '\$10.99',
       'oldPrice': '\$12.00',
-      'image': 'assets/obh_combi.png',
+      'image': 'assets/images/Image (2).png',
     },
     {
       'name': 'Betadine',
       'details': '50ml',
       'price': '\$6.99',
       'oldPrice': '\$8.00',
-      'image': 'assets/betadine.png',
+      'image': 'assets/images/Image (2).png',
     },
     {
       'name': 'Bodrexin',
       'details': '75ml',
       'price': '\$7.99',
       'oldPrice': '\$9.00',
-      'image': 'assets/bodrexin.png',
+      'image': 'assets/images/Image (2).png',
     },
   ];
 
@@ -63,12 +69,20 @@ class PharmacyScreen extends StatelessWidget {
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            if (GoRouter.of(context).canPop()) {
+              context.pop();
+            } else {
+              context.go('/home');
+            }
+          },
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart, color: Colors.black),
-            onPressed: () {},
+            icon: Image.asset('assets/images/Group.png'),
+            onPressed: () {
+              context.go('/cart');
+            },
           ),
         ],
       ),
@@ -91,31 +105,31 @@ class PharmacyScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Color(0xFFDBF1FF),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Your Trusted Source for\nWomen’s Health Essentials',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                          ),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.blue[100],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Your Trusted Source for\nWomen’s Health Essentials',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
                         ),
-                        SizedBox(height: 8),
-                        ElevatedButton(
+                      ),
+                      SizedBox(height: 8),
+                      SizedBox(
+                        height: 30,
+                        width: 150,
+                        child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
@@ -123,17 +137,21 @@ class PharmacyScreen extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {},
-                          child: Text('Upload Prescription'),
+                          child: Text(
+                            'Upload Prescription',
+                            style: TextStyle(color: Colors.white, fontSize: 10),
+                          ),
                         ),
-                      ],
-                    ),
-                    Image.asset(
-                      'assets/banner_clipboard.png',
-                      height: 80,
-                      fit: BoxFit.cover,
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                  Image.asset(
+                    'assets/images/glasses-medications-around-clipboard 1.png',
+                    height: 137,
+                    width: 167,
+                    fit: BoxFit.cover,
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 16),

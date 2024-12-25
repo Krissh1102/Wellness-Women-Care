@@ -16,9 +16,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
-        leading: const AppIcon(),
+      appBar: AppBar(
+        title: const AppIcon(),
         centerTitle: true,
+        backgroundColor: Colors.transparent,
       ),
       backgroundColor: AppColors.backgroundLight,
       body: Padding(
