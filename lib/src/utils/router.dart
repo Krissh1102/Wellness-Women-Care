@@ -11,6 +11,8 @@ import 'package:wellnes/src/features/screens/nearbyClinic/clinicDetailScreen.dar
 import 'package:wellnes/src/features/screens/nearbyClinic/nearbyClinicScreen.dart';
 import 'package:wellnes/src/features/screens/pharmacy/cartScreen.dart';
 import 'package:wellnes/src/features/screens/pharmacy/pharmacyScreen.dart';
+import 'package:wellnes/src/features/screens/profile/cancelAppointment.dart';
+import 'package:wellnes/src/features/screens/profile/pastAppointment.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -67,6 +69,14 @@ class AppRouter {
       GoRoute(
         path: '/appointment',
         builder: (context, state) => AppointmentScreen(),
+      ),
+      GoRoute(
+        path: '/allappointment',
+        builder: (context, state) => AllAppointmentsScreen(),
+      ),
+      GoRoute(
+        path: '/cancelappointment',
+        builder: (context, state) => CancelAppointmentScreen(),
       ),
     ],
   );
