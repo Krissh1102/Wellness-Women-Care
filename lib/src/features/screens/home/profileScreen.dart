@@ -76,15 +76,16 @@ class ProfileScreen extends StatelessWidget {
               ),
               SizedBox(height: 30),
               buildMenuItem(Icons.favorite_border_outlined, 'My Saved', () {
-                // My Saved logic here
+                context.go('/saved');
               }),
               buildMenuItem(Icons.calendar_today_outlined, 'Appointment', () {
                 context.go('/allappointment');
               }),
               buildMenuItem(Icons.payment_outlined, 'Payment Method', () {
-                // Payment Method logic here
+                context.go('/payment');
               }),
               buildMenuItem(Icons.help_center_outlined, 'FAQs', () {
+                context.go('/faq');
                 // FAQs logic here
               }),
               buildMenuItem(Icons.logout_outlined, 'Logout', () {

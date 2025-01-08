@@ -112,7 +112,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           _buildCategoryButton(
                             'assets/images/home/Group 167.png',
                             "Teleconsultation",
-                            () {},
+                            () {
+                              context.go('/teleconsultation');
+                            },
                           ),
                         ],
                       ),

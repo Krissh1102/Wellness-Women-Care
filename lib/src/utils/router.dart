@@ -12,7 +12,12 @@ import 'package:wellnes/src/features/screens/nearbyClinic/nearbyClinicScreen.dar
 import 'package:wellnes/src/features/screens/pharmacy/cartScreen.dart';
 import 'package:wellnes/src/features/screens/pharmacy/pharmacyScreen.dart';
 import 'package:wellnes/src/features/screens/profile/cancelAppointment.dart';
+import 'package:wellnes/src/features/screens/profile/faqScreen.dart';
 import 'package:wellnes/src/features/screens/profile/pastAppointment.dart';
+import 'package:wellnes/src/features/screens/profile/payment/payment_method_screen.dart';
+import 'package:wellnes/src/features/screens/profile/saved.dart';
+import 'package:wellnes/src/features/screens/teleconsultation/doctor_details.dart';
+import 'package:wellnes/src/features/screens/teleconsultation/teleconsultationScreen.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -77,6 +82,26 @@ class AppRouter {
       GoRoute(
         path: '/cancelappointment',
         builder: (context, state) => CancelAppointmentScreen(),
+      ),
+      GoRoute(
+        path: '/teleconsultation',
+        builder: (context, state) => Teleconsultationscreen(),
+      ),
+      GoRoute(
+        path: '/doctor-details',
+        builder: (context, state) => DoctorDetailsScreen(),
+      ),
+      GoRoute(
+        path: '/payment',
+        builder: (context, state) => PaymentMethodScreen(),
+      ),
+      GoRoute(
+        path: '/saved',
+        builder: (context, state) => MySavedScreen(),
+      ),
+      GoRoute(
+        path: '/faq',
+        builder: (context, state) => HelpCenterScreen(),
       ),
     ],
   );
